@@ -94,14 +94,16 @@ TEST(PrimeTests, sumPrime_LargeRange) {
 TEST(PrimeTests, Integration_nPrime_and_checkPrime) {
     for (uint64_t i = 1; i <= 50; ++i) {
         uint64_t prime = nPrime(i);
-        EXPECT_TRUE(checkPrime(prime)) << "nPrime(" << i << ") = " << prime << " is not prime!";
+        EXPECT_TRUE(checkPrime(prime))
+            << "nPrime(" << i << ") = " << prime << " is not prime!";
     }
 }
 
 TEST(PrimeTests, Integration_nextPrime_and_checkPrime) {
     for (uint64_t x : {1, 10, 50, 100, 500}) {
         uint64_t next = nextPrime(x);
-        EXPECT_TRUE(checkPrime(next)) << "nextPrime(" << x << ") = " << next << " is not prime!";
+        EXPECT_TRUE(checkPrime(next))
+            << "nextPrime(" << x << ") = " << next << " is not prime!";
         EXPECT_GT(next, x) << "nextPrime(" << x << ") should be > " << x;
     }
 }
